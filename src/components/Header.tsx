@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import logo from '../assets/Logo.svg'
 
 const navigation = [
   { name: 'Capabilities', href: '#Capabilities' },
@@ -53,7 +54,7 @@ export default function Header() {
             <span className="sr-only">Wunna's Portfolio</span>
             <img
               alt="logo"
-              src="/src/assets/Logo.svg"
+              src={logo}
               className="h-8 w-auto bg-slate-600 shadow-lg shadow-slate-700/50 rounded-lg"
             />
           </a>
@@ -100,7 +101,7 @@ export default function Header() {
               <span className="sr-only">Wunna's Portfolio</span>
               <img
                 alt="logo"
-                src="/src/assets/Logo.svg"
+                src={logo}
                 className="h-8 w-auto bg-slate-600 shadow-lg shadow-slate-700/50 rounded-lg"
               />
             </a>

@@ -1,3 +1,5 @@
+import heroimg from '../assets/hero.svg';
+
 export default function HeroSection() {
   return (
     <div id="HeroSection" className="bg-slate-700">
@@ -26,7 +28,7 @@ export default function HeroSection() {
           </div>
           <img
             alt=""
-            src="/src/assets/hero.svg"
+            src={heroimg}
             className="mt-10 aspect-6/5 w-full max-w-lg rounded-lg object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
           />
         </div>

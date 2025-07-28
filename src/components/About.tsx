@@ -1,3 +1,6 @@
+import logo from '../assets/Logo.svg'
+import myimg from '../assets/about.svg'
+
 export default function About() {
   return (
     <div id="About" className="bg-slate-800 pt-24 pb-16 sm:pt-32 sm:pb-24 xl:pb-32">
@@ -7,7 +10,7 @@ export default function About() {
             <div className="relative aspect-1/1 h-full after:absolute after:inset-0 after:rounded-2xl after:inset-ring after:inset-ring-white/15 md:-mx-8 xl:mx-0 xl:aspect-auto">
               <img
                 alt="about image"
-                src="/src/assets/about.svg"
+                src={myimg}
                 className="absolute inset-0 size-full rounded-2xl bg-slate-800 object-cover shadow-2xl"
               />
             </div>
@@ -28,7 +31,7 @@ export default function About() {
 
             <figure className="relative isolate pt-7 sm:pt-14">
               <img
-                src="/src/assets/Logo.svg"
+                src={logo}
                 alt="logo"
                 aria-hidden="true"
                 className="absolute top-0 left-0 -z-10 h-32 stroke-white/20"
