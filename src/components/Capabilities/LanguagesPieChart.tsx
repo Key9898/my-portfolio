@@ -1,5 +1,6 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Label } from 'recharts'
 import { useEffect, useRef, useState } from 'react'
+import { useTheme } from '../../hooks/useTheme'
 
 const data = [
   { name: 'HTML', value: 100 },
@@ -40,13 +41,12 @@ const BG_CLASS_MAP: Record<string, string> = {
 }
 
 export default function LanguagesPieChart() {
+  const { theme } = useTheme()
   const containerRef = useRef<HTMLDivElement | null>(null)
   const [visible, setVisible] = useState(false)
 
   // Overall proficiency (average of all values)
-  const overallProficiency = Math.round(
-    data.reduce((sum, d) => sum + d.value, 0) / data.length
-  )
+  const overallProficiency = Math.round(data.reduce((sum, d) => sum + d.value, 0) / data.length)
 
   // Center number animation
   const [centerValue, setCenterValue] = useState(0)
@@ -81,14 +81,11 @@ export default function LanguagesPieChart() {
   }, [])
 
   return (
-    <div
-      ref={containerRef}
-      className="relative z-10 w-full min-w-0 px-4 pt-0 pb-4 bg-inherit"
-    >
+    <div ref={containerRef} className="relative z-10 w-full min-w-0 bg-inherit px-4 pt-0 pb-4">
       {visible && (
-        <div className="flex flex-col items-center gap-6 justify-center">
+        <div className="flex flex-col items-center justify-center gap-6">
           {/* Pie (Top) */}
-          <div className="min-w-0 w-56 h-56 sm:w-72 sm:h-72 lg:w-72 lg:h-72 sm:-mt-8 lg:mt-0">
+          <div className="h-56 w-56 min-w-0 sm:-mt-8 sm:h-72 sm:w-72 lg:mt-0 lg:h-72 lg:w-72">
             <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
               <PieChart>
                 <Pie
@@ -116,23 +113,29 @@ export default function LanguagesPieChart() {
                   <Label
                     value={`${centerValue}%`}
                     position="center"
-                    // dx={5}
                     dy={-10}
-                    fill="#ffffff"
+                    fill={theme === 'dark' ? '#ffffff' : '#0f172a'}
                     style={{ fontSize: 28, fontWeight: 700 }}
                   />
                   <Label
                     value="Proficiency"
                     position="center"
-                    // dx={5}
                     dy={16}
-                    fill="#cbd5e1"
+                    fill={theme === 'dark' ? '#cbd5e1' : '#475569'}
                     style={{ fontSize: 12 }}
                   />
                 </Pie>
                 <Tooltip
-                  contentStyle={{ background: 'rgba(17,24,39,0.9)', border: 'none', color: '#fff' }}
-                  itemStyle={{ color: '#fff' }}
+                  contentStyle={
+                    theme === 'dark'
+                      ? { background: 'rgba(17,24,39,0.9)', border: 'none', color: '#fff' }
+                      : {
+                          background: 'rgba(255,255,255,0.95)',
+                          border: '1px solid #e2e8f0',
+                          color: '#0f172a',
+                        }
+                  }
+                  itemStyle={{ color: theme === 'dark' ? '#fff' : '#0f172a' }}
                 />
               </PieChart>
             </ResponsiveContainer>
@@ -140,10 +143,23 @@ export default function LanguagesPieChart() {
 
           {/* Legend (Bottom, Grid) */}
           <div className="grid grid-cols-2 gap-x-8 gap-y-3">
-            {['HTML', 'CSS', 'JavaScript', 'React', 'TypeScript', 'TailwindCSS', 'WordPress', 'MySQL', 'Firebase'].map((name) => (
+            {[
+              'HTML',
+              'CSS',
+              'JavaScript',
+              'React',
+              'TypeScript',
+              'TailwindCSS',
+              'WordPress',
+              'MySQL',
+              'Firebase',
+            ].map((name) => (
               <div key={name} className="flex items-center gap-2">
-                <span className={`inline-block w-3 h-3 rounded-sm ${BG_CLASS_MAP[name]}`} aria-label={`${name} color`} />
-                <span className="text-white text-sm">{name}</span>
+                <span
+                  className={`inline-block h-3 w-3 rounded-sm ${BG_CLASS_MAP[name]}`}
+                  aria-label={`${name} color`}
+                />
+                <span className="text-sm text-slate-800 dark:text-white">{name}</span>
               </div>
             ))}
           </div>

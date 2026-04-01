@@ -47,7 +47,7 @@ export default function ShowcasePagination({
   }
 
   return (
-    <div className="mt-8 border-t border-gray-700 pt-6">
+    <div className="mt-8 border-t border-slate-200 pt-6 dark:border-gray-700">
       {/* Make pagination take the exact column width */}
       <div className="w-full px-0">
         <div className="flex items-center justify-between py-6">
@@ -57,7 +57,7 @@ export default function ShowcasePagination({
               type="button"
               onClick={handlePrevious}
               disabled={currentPage === 1 || totalPages === 0}
-              className="relative inline-flex items-center rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="relative inline-flex items-center rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-white/20 dark:bg-white/10 dark:text-gray-300 dark:hover:bg-white/20"
             >
               Previous
             </button>
@@ -65,7 +65,7 @@ export default function ShowcasePagination({
               type="button"
               onClick={handleNext}
               disabled={currentPage === totalPages || totalPages === 0}
-              className="relative ml-3 inline-flex items-center rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="relative ml-3 inline-flex items-center rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
             >
               Next
             </button>
@@ -74,18 +74,22 @@ export default function ShowcasePagination({
           {/* Desktop pagination */}
           <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
             <div>
-              <p className="text-sm text-slate-500">
-                Showing <span className="font-medium">{startItem}</span> to <span className="font-medium">{endItem}</span> of{' '}
+              <p className="text-sm text-slate-500 dark:text-gray-400">
+                Showing <span className="font-medium">{startItem}</span> to{' '}
+                <span className="font-medium">{endItem}</span> of{' '}
                 <span className="font-medium">{totalPosts}</span> results
               </p>
             </div>
             <div>
-              <nav aria-label="Pagination" className="isolate inline-flex -space-x-px rounded-lg shadow-xl">
+              <nav
+                aria-label="Pagination"
+                className="isolate inline-flex -space-x-px rounded-lg shadow-xl"
+              >
                 <button
                   type="button"
                   onClick={handlePrevious}
                   disabled={currentPage === 1 || totalPages === 0}
-                  className="relative inline-flex items-center rounded-l-lg px-2 py-2 text-slate-400 ring-1 ring-inset ring-slate-300 hover:bg-sky-700 focus:z-20 focus:outline-offset-0 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="relative inline-flex items-center rounded-l-lg px-2 py-2 text-slate-400 ring-1 ring-slate-300 transition-colors ring-inset hover:bg-sky-700 hover:text-white focus:z-20 focus:outline-offset-0 disabled:cursor-not-allowed disabled:opacity-50 dark:text-gray-400 dark:ring-white/20"
                 >
                   <span className="sr-only">Previous</span>
                   <ChevronLeftIcon aria-hidden="true" className="h-5 w-5" />
@@ -96,10 +100,11 @@ export default function ShowcasePagination({
                     type="button"
                     key={page}
                     onClick={() => handlePageClick(page)}
-                    className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold transition-colors ${currentPage === page
-                      ? 'z-10 bg-sky-600 text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600'
-                      : 'text-slate-500 ring-1 ring-inset ring-slate-300 hover:bg-sky-700 hover:text-white focus:z-20 focus:outline-offset-0'
-                      }`}
+                    className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold transition-colors ${
+                      currentPage === page
+                        ? 'z-10 bg-sky-600 text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600'
+                        : 'text-slate-500 ring-1 ring-slate-300 ring-inset hover:bg-sky-700 hover:text-white focus:z-20 focus:outline-offset-0 dark:text-gray-400 dark:ring-white/20'
+                    }`}
                   >
                     {page}
                   </button>
@@ -109,7 +114,7 @@ export default function ShowcasePagination({
                   type="button"
                   onClick={handleNext}
                   disabled={currentPage === totalPages || totalPages === 0}
-                  className="relative inline-flex items-center rounded-r-lg px-2 py-2 text-slate-400 ring-1 ring-inset ring-slate-300 hover:bg-sky-700 focus:z-20 focus:outline-offset-0 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="relative inline-flex items-center rounded-r-lg px-2 py-2 text-slate-400 ring-1 ring-slate-300 transition-colors ring-inset hover:bg-sky-700 hover:text-white focus:z-20 focus:outline-offset-0 disabled:cursor-not-allowed disabled:opacity-50 dark:text-gray-400 dark:ring-white/20"
                 >
                   <span className="sr-only">Next</span>
                   <ChevronRightIcon aria-hidden="true" className="h-5 w-5" />

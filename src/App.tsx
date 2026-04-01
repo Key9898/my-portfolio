@@ -1,16 +1,17 @@
+import { lazy, Suspense } from 'react'
 import Header from './components/Header/Header'
 import Notification from './components/Notification/Notification'
 import HeroSection from './components/HeroSection/HeroSection'
 import Capabilities from './components/Capabilities/Capabilities'
-import Showcase from './components/Showcase/Showcase'
-import Profile from './components/Profile/Profile'
 import GetInTouch from './components/GetInTouch/GetInTouch'
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton'
 import SocialAccount from './components/SocialAccount/SocialAccount'
 import Footer from './components/Footer/Footer'
 
-function App() {
+const Showcase = lazy(() => import('./components/Showcase/Showcase'))
+const Profile = lazy(() => import('./components/Profile/Profile'))
 
+function App() {
   return (
     <>
       <Notification />
@@ -20,10 +21,14 @@ function App() {
         <Capabilities />
       </section>
       <section id="showcase">
-        <Showcase />
+        <Suspense>
+          <Showcase />
+        </Suspense>
       </section>
       <section id="profile">
-        <Profile />
+        <Suspense>
+          <Profile />
+        </Suspense>
       </section>
       <section id="getInTouch">
         <GetInTouch />

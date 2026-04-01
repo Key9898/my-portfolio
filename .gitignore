@@ -22,3 +22,18 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Trae IDE
+.agents
+.trae
+
+# Claude IDE
+.claude
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Test coverage
+coverage
