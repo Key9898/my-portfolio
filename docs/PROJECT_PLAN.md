@@ -440,7 +440,7 @@ Personal portfolio website for Wunna Aung - Frontend Developer & WordPress Devel
 4.  Performed **Global Framer Motion Overhaul** (Staggered icons, sliding tabs, and fluid drawer).
 5.  Optimized **HeroSection** for perfect full-viewport (`100dvh`) coverage and precise relocation of the **Scroll Indicator** (under 'professional' on Desktop, centered on Mobile).
 6.  Implemented **Character-Perfect Copywriting Overhaul** (Hero, Get in Touch, 'Web Engineer' Bio, and Showcase descriptions).
-7.  Performed **UI/UX Fine-Tuning Pass** (Image Loading Strategy Optimization/Eager Logo/Lazy Showcase, CLS Prevention, Aria-Labels, Ellipsis character refinement, and compositor-friendly transitions).
+7.  Performed **UI/UX Fine-Tuning Pass** (UI Integrity Fix, Mobile Boundary Fix, Final Vertical Gap Standardization 20/28 units).
 7.  Fixed **Header Logo** distortion and alignment issues in all scrolling states.
 7.  Expanded **Capabilities** tech stack to 12 skills and reordered logically.
 8.  Major UI/UX overhaul of **Showcase** section (Section Header, Grid, Load More button).

@@ -60,7 +60,7 @@ export default function Capabilities() {
     <section
       id="capabilities"
       ref={sectionRef}
-      className="relative bg-gradient-to-b from-slate-100 to-sky-50 py-24 sm:py-32 lg:py-32 dark:from-slate-800 dark:to-sky-950"
+      className="relative bg-gradient-to-b from-slate-100 to-sky-50 pt-20 pb-4 sm:pt-28 lg:pt-28 lg:pb-4 dark:from-slate-800 dark:to-sky-950"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-8">
         {/* Section Header */}

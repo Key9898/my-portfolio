@@ -76,7 +76,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="px-6 pb-24 sm:px-10 sm:pb-32 lg:px-8 lg:py-32 lg:pt-0">
+    <div className="px-6 py-0 sm:px-10 sm:py-0 lg:px-8 lg:py-0">
       <motion.div
         ref={containerRef}
         variants={containerVariants}

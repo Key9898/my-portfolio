@@ -44,7 +44,7 @@ export default function Showcase() {
     <div
       id="showcase"
       ref={sectionRef}
-      className="bg-gradient-to-t from-slate-100 to-sky-50 py-24 sm:py-32 lg:py-32 dark:from-slate-800 dark:to-sky-950"
+      className="relative isolate -mt-px bg-gradient-to-t from-slate-100 to-sky-50 pt-20 pb-0 sm:pt-28 lg:pt-28 lg:pb-0 dark:from-slate-800 dark:to-sky-950"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}

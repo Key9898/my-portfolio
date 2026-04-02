@@ -27,7 +27,7 @@
 - [x] Performed **Global Framer Motion Overhaul** across all major sections (Capabilities, Showcase, Profile, GetInTouch).
 - [x] Implemented premium **sliding tab indicators** using Framer Motion `layoutId`.
 - [x] Implemented **Character-Perfect Copywriting Overhaul** (Hero, Get in Touch, Web Engineer Bio).
-- [x] Performed **UI/UX Fine-Tuning Pass** (Image Loading Strategy Optimization/Eager Logo/Lazy Showcase, CLS Prevention, Aria-Labels, Ellipsis character refinement, and transition optimizations).
+- [x] Performed **UI/UX Fine-Tuning Pass** (UI Integrity / Radar Card Fix, Mobile Boundary Fix /-mt-px, Final Vertical Gap Standardization 20/28 units).
 - [x] Optimized **HeroSection** for perfect full-viewport (`100dvh`) coverage and precise relocation of the **Scroll Indicator**:
     - **Desktop:** Exactly aligned under the word **"professional"** (238px offset).
     - **Mobile/Tablet:** Centered horizontally at `bottom-8`.

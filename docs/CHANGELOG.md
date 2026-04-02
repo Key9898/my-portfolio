@@ -22,7 +22,10 @@ The format is based on [Keep a Changelog](https://keep a changelog.com/en/1.0.0/
     - `Profile.tsx`: Upgraded Bio to **"Web Engineer"** (removing 'Frontend').
     - `projects.ts`: Added **"Why it matters"** benefit-driven leads to all 10 project descriptions.
 - **UI/UX Fine-Tuning & High-Fidelity Polish**:
-    - **Image Loading Strategy Optimization**: Updated Header Logo to `loading="eager"` and Showcase project images to `loading="lazy"` for peak Performance.
+    - **UI Integrity Fix**: Resolved Expertise Radar card clipping on mobile/tablet via adding `pb-4` padding to Capabilities section.
+    - **Boundary Continuity Fix**: Resolved a 1px sub-pixel rendering gap between Capabilities and Showcase on Mobile/Tablet via `-mt-px` overlap.
+    - **Final Vertical Gap Standardization**: Standardized all section gaps to exactly **20 units (Mobile)** and **28 units (Desktop)**.
+    - **Image Loading Strategy Optimization**: Updated Header Logo to `loading="eager"` and Showcase project images to `loading="lazy"`.
     - **CLS Prevention**: Added explicit `width` and `height` to Hero and ShowcaseCard images.
     - **Accessibility Upgrade**: Added `aria-label` support to all Tech Stack icons.
     - **Typography Standard**: Replaced all triple dots (`...`) with the proper ellipsis character (`…`).

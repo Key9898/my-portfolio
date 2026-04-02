@@ -3,7 +3,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa'
 
 export default function ContactInfo() {
   return (
-    <div className="relative px-6 pb-24 sm:px-10 sm:pb-32 lg:static lg:px-8 lg:py-32 lg:pt-0">
+    <div className="relative px-6 py-0 sm:px-10 sm:py-0 lg:static lg:px-8 lg:py-0">
       <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
         <h2 className="text-4xl font-semibold tracking-tight text-pretty text-slate-900 sm:text-5xl dark:text-white">
           Get in touch
