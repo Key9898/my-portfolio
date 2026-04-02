@@ -141,7 +141,7 @@ export default function Header() {
       }
     >
       <div className="mx-auto max-w-7xl">
-        <div className={isSticky ? 'px-6 py-4 lg:px-8' : 'px-6 pt-6 lg:max-w-2xl lg:pr-0 lg:pl-8'}>
+        <div className={isSticky ? 'px-6 py-4 lg:px-8' : 'px-6 pt-6 lg:max-w-3xl lg:pr-0 lg:pl-8'}>
           <nav
             aria-label="Global"
             className={
@@ -166,10 +166,10 @@ export default function Header() {
               <img
                 alt="Logo"
                 src={Logo}
-                loading="lazy"
+                loading="eager"
                 decoding="async"
                 fetchPriority="high"
-                className="h-12 w-auto sm:h-14 lg:h-14 lg:rounded-lg lg:bg-slate-900/10 lg:p-1.5 lg:shadow-xl lg:ring-1 lg:ring-slate-900/10 lg:hover:bg-slate-900/20 lg:hover:ring-slate-900/20 dark:lg:bg-white/10 dark:lg:ring-white/10 dark:lg:hover:bg-white/20 dark:lg:hover:ring-white/20"
+                className="size-12 flex-shrink-0 object-contain sm:size-14 lg:size-14 lg:rounded-lg lg:bg-slate-900/10 lg:p-1.5 lg:shadow-xl lg:ring-1 lg:ring-slate-900/10 lg:hover:bg-slate-900/20 lg:hover:ring-slate-900/20 dark:lg:bg-white/10 dark:lg:ring-white/10 dark:lg:hover:bg-white/20 dark:lg:hover:ring-white/20"
               />
             </button>
 
@@ -248,10 +248,10 @@ export default function Header() {
               <img
                 alt="Logo"
                 src={Logo}
-                loading="lazy"
+                loading="eager"
                 decoding="async"
                 fetchPriority="high"
-                className="h-12 w-auto"
+                className="size-12 object-contain"
               />
             </button>
             <button

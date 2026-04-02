@@ -41,6 +41,7 @@
 - Clear visual hierarchy (headings, sections, actions)
 - Accessible color contrast (≥ 4.5:1 ratio)
 - Smooth transitions and animations
+- **RULE:** ALL animations and transitions MUST use **`framer-motion`** for consistency and performance.
 - Clear call-to-action buttons
 - Intuitive navigation flow
 

@@ -3,48 +3,54 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+The format is based on [Keep a Changelog](https://keep a changelog.com/en/1.0.0/).
 
 ---
 
 ## [Unreleased] - 2026-04-01
 
-### Changed
-- Increased vertical padding for all major sections (`Capabilities`, `Showcase`, `GetInTouch`) to improve mobile UI/UX.
-- `Footer.tsx`: Reduced vertical padding to `py-4` for an ultra-compact and balanced layout.
-- `Header.tsx`: Fixed vertical alignment in sticky mode (Logo -> Nav -> Toggle) and improved spacing between menu items and theme toggle.
-- Overall UI/UX audit performed on 320px, 768px, and 1440px viewports.
+### Global Animation Overhaul
+- **Strict Scroll-Triggering**: Performed a comprehensive animation overhaul using **Framer Motion** with strict **scroll-triggered triggers** (`useInView`) for sequential arrival.
+- `ShowcaseCard.tsx`: Standardized developer icons with professional **`FaUser`** (personal) and **`FaUsers`** (team) styles, using consistent slate coloring and tailored sizing (`size-5` for teams, `size-4` for personal) for visual balance.
+- `GetInTouch.tsx`: Implemented **Premium UI Upgrade**:
+  - `ContactInfo.tsx`: Added professional social links for GitHub and LinkedIn with **'Follow on Social'** refined title and hover animations.
+  - `ContactForm.tsx`: Upgraded main form card with **Glassmorphism**, subtle **border-glow**, and `sky-600` focus theme.
+  - `ContactForm.tsx`: Added an interactive **Success State** view with a checkmark entrance animation and a "Send another message" link.
+- **Character-Perfect Copywriting Overhaul**:
+    - `HeroSection.tsx`: Restored title to **"Crafting Digital Experiences"** and updated description.
+    - `ContactInfo.tsx`: Restored title to **"Get in touch"** and implemented a compelling new description.
+    - `Profile.tsx`: Upgraded Bio to **"Web Engineer"** (removing 'Frontend').
+    - `projects.ts`: Added **"Why it matters"** benefit-driven leads to all 10 project descriptions.
+- **UI/UX Fine-Tuning & High-Fidelity Polish**:
+    - **Image Loading Strategy Optimization**: Updated Header Logo to `loading="eager"` and Showcase project images to `loading="lazy"` for peak Performance.
+    - **CLS Prevention**: Added explicit `width` and `height` to Hero and ShowcaseCard images.
+    - **Accessibility Upgrade**: Added `aria-label` support to all Tech Stack icons.
+    - **Typography Standard**: Replaced all triple dots (`...`) with the proper ellipsis character (`…`).
+    - **Balanced Layouts**: Implemented `text-pretty` in Hero and Profile bio sections.
+    - **Transition Optimization**: Replaced generic `transition-all` with specific compositor-friendly properties.
+- `HeroSection.tsx`: Optimized **Scroll Indicator** placement:
+    - Precise alignment under the word **"professional"** (for Desktop).
+    - Perfectly **centered** horizontally (for Mobile).
+    - Anchored at **`bottom-8`** for high-fidelity appearance.
+  - `Showcase.tsx`: Viewport-triggered headers, tabs, and project cards with accurate thresholds.
+  - `ContactForm.tsx`: Strictly sequential fields reveal triggered only upon viewport arrival.
+  - `SocialAccount.tsx`: Modernized with `framer-motion` and strictly scroll-triggered visibility (after 300px).
+  - `Profile.tsx`: Upgraded the side drawer with fluid `AnimatePresence` motions.
 
-### Fixed
-- `src/components/Notification/Notification.tsx` — renamed component from `Example` to `Notification` for naming consistency.
+### UI/UX Refinements
+- `HeroSection.tsx`: Optimized **HeroSection** for perfect full-viewport (`100dvh`) coverage and precise relocation of the **Scroll Indicator** (under 'professional' on Desktop, centered on Mobile).
+- `Header.tsx`: Fixed logo distortion issue and improved sticky alignment.
+- `Showcase` Section: Complete UI/UX overhaul (Section Header, 3rd-column Grid, and Load More button).
+  - Modernized `ShowcaseTabs` with project counts and accurate category filtering.
+- `TechnicalRadarChart.tsx`: Replaced Pie Chart with a professional Radar Chart using Shadcn UI.
+- `Footer.tsx`: Reduced vertical padding to `py-4` for a balanced, ultra-compact layout.
 
-### Added
-- `.gitignore` — added `.claude/` (Claude IDE settings), `.env` and `.env.*` (environment variables), `coverage/` (test coverage reports).
-
-### Documentation
-- Created a professional, high-fidelity Open Graph image (`public/OGImage/og-image.jpg`) with photorealistic likeness.
-- Performed Deep Scan analysis of all functions and logic — confirmed project is complete and working properly.
-- Verified Project Structure follows all Project Rules — modular architecture, naming conventions, file organization all correct.
+### Project Standards
+- `PROJECT_RULES.md`: Established **`framer-motion`** as the mandatory standard for all animations.
+- Integrated **Shadcn UI** library and configured **path aliases** (`@/`) for scalable architecture.
+- Verified all interactive states across 320px to 1440px viewports.
 
 ---
-
-## [Unreleased]
-
-### Fixed
-- `tsconfig.node.json` — changed `target` and `lib` from `ES2023` to `ES2022` (TypeScript compatibility)
-- `tsconfig.node.json` — added `forceConsistentCasingInFileNames: true` (cross-platform consistency)
-
-### Added
-- Icon Libraries section in Project Rules — HeroIcons for UI controls, ReactIcons for tech stack & social
-- Animation Library section in Project Rules — `framer-motion` is now MANDATORY for all animations
-- Project Rules file created (`.trae/rules/project_rules.md`)
-- PROJECT_RULES.md added to `docs/` folder
-- `.agents` and `.trae` folders added to `.gitignore`
-- ESLint configuration with TypeScript, React Hooks, React Refresh, and a11y plugins
-- Prettier configuration with Tailwind CSS plugin
-
-### Removed
-- Storybook (not needed for portfolio - no audience for component documentation)
-- `react-is` dependency (only used by Storybook)
 
 ---
 
